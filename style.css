@@ -1,0 +1,41 @@
+#header-back{
+    background-color:orange;
+}
+#header{
+    width:1200px;
+    margin:0 auto;
+    margin:0px 50px;
+}
+#main-back{
+    height:800px;
+    width:50%;
+    float:left;
+}
+#main{
+    margin:0 auto;
+    padding:0px 50px;
+}
+#sub-back{
+    height:800px;
+    width:50%;
+    background-color:skyblue;
+    float:left;
+}
+#sub{
+    margin:0 auto;
+    padding:0px 50px;
+}
+.button{
+    margin:5px;
+}
+.clear{
+    clear:both;
+}
+#footer-back{
+    background-color:grey;
+}
+#footer{
+    width:1200px;
+    margin:0 auto;
+    margin:0px 50px;
+}

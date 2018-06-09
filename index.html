@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>動的な試作ページ</title>
+        <link rel="stylesheet" href="style.css">
+        <!--<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>-->
+        <script src="./jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="js/first.js"> </script>
+        <script type="text/javascript">
+        var count = 1 ;
+        $(function(){
+            alert("jQueryファイルの読み込みが完了しました");
+            //function fade(){                                  ※NG1 ここいらない
+            $("#fSwich").click(function(){
+                $("#fade").fadeOut(1);
+                $("#fade").fadeIn();
+                $("#fade").text("(*'ω`)ﾉ");
+                
+             });
+            //};                                                ※NG1
+            $("#rSwich").click(function(){
+                $("#fade").text("(´∀｀)");
+            })
+            $("#plus").click(function(){
+                count++;
+                if(count<11){
+                $("#clone").clone(true).insertAfter("#clone").addClass('cloned');
+                }
+            })
+            $("#rplus").click(function(){
+                count = 1;
+                $(".cloned").remove();
+            })
+        })
+</script>
+    </head>
+    <body>
+        <div id="header-back">
+            <div id="header">
+                <div id="header-left">
+                    へっだーれふと
+                </div>
+                <!--<div id="header-right">
+                    へっだーらいと
+                </div>-->
+            </div>
+        </div>
+        <div id="main-back">
+            <div id="main">
+                めいん
+                <h1>動画教材で学習した内容</h1>
+                <!--ここからjs連携コンテンツを記述-->
+                <div id="containts">
+                    <div id="containts-box">
+                        <p>●入力された値をアラートで表示する</p>
+                            <label>表示内容：</label>
+                            <input type="string" id="imput1">
+                            <input type="submit" onclick="callAlert()"/>
+                    </div>
+                    <div id="containts-box">
+                        <p>●2つの値に入力された内容で計算を行う</p>
+                        <label>値1：</label>
+                        <input type="number" id="inputNum1">
+                        <label>値2：</label>
+                        <input type="number" id="inputNum2">
+                        <p></p>
+                        <input type="submit" value="足し算" class="button" onclick="calc(1)">
+                        <input type="submit" value="引き算" class="button" onclick="calc(2)">
+                        <input type="submit" value="掛け算" class="button" onclick="calc(3)">
+                        <input type="submit" value="割り算" class="button" onclick="calc(4)">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sub-back">
+            <div id="sub">
+                さぶ
+                <h1>自分で作った内容</h1>
+                    <!--ここからjs連携コンテンツを記述-->
+                <div id="containts">
+                    <div id="containts-box">
+                        <p>●フェードイン・フェードアウト</p>
+                        <input type="button" value="フェードさせる" class="button" id="fSwich">
+                        <input type="button" value="元に戻す" class="button" id="rSwich">
+                        <div id="fade">(´∀｀)</div>
+                    </div>
+                    <div id="containts-box">
+                        <p>●クローンを生成</p>
+                        <a>壁|っ</a><a id="clone">ω・)</a><p></p>
+                        <button id="plus">増殖</button>
+                        <input type="button" value="元に戻す" class="button" id="rplus">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div id="footer-back">
+            <div id="footer">
+                ふったー
+            </div>
+        </div>
+    </body>
+</html>
